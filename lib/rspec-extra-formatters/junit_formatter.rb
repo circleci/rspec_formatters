@@ -59,7 +59,7 @@ class JUnitFormatter < RSpec::Core::Formatters::BaseFormatter
     unless (exception.nil?)
       message  = exception.message
       message += "\n"
-      message += format_backtrace(exception.backtrace, t).join("\n")
+      message += format_backtrace(exception.backtrace, t.metadata).join("\n")
     end
     return(message)
   end
